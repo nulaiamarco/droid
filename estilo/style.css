@@ -1,0 +1,204 @@
+@charset "UTF-8";
+
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+@font-face {
+    font-family: 'Android';
+    src: url('../fontes/idroid.otf') format('opentype');
+    font-weight: normal;
+}
+
+/*área root é visível em todo o arquivo CSS portanto nela declaramos as variáveis*/
+:root {
+    --cor0: #c5ebd6;
+    --cor1: #83e1ad;
+    --cor2: #3ddc84;
+    --cor3: #2fa866;
+    --cor4: #1a5c37;
+    --cor5: #063d1e;
+
+    --fonte-padrao: Arial, Verdana, Helvetica, sans-serif;
+    --fonte-destaque: 'Bebas Neue', cursive;
+    --fonte-android: 'Android', cursive;
+}
+
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    background-color: var(--cor0);
+    font-family: var(--fonte-padrao);
+}
+
+header {
+    background-image: linear-gradient(to bottom, var(--cor3), var(--cor5)); /* efeito degrade */
+    min-height: 150px;
+    text-align: center;
+    padding-top: 40px;
+}
+
+header > h1 {
+    color: white;
+    font-family: var(--fonte-destaque);
+    font-size: 3em;
+    font-weight: normal;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.266);
+}
+
+header > p {
+    font-family: var(--fonte-padrao);
+    font-size: 1.1em;
+    color: white;
+    max-width: 650px;
+    padding-right: 10px;
+    padding-left: 10px;
+    margin: auto;
+    text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.315);
+}
+
+nav { /*configurações do menu*/
+    background-color: var(--cor5);
+    padding: 10px;
+    box-shadow: 0px 7px 7px rgba(0, 0, 0, 0.208);
+}
+
+nav > a { /*links do menu*/
+    color: var(--cor1);
+    padding: 10px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 13px;
+    /* transition-duration: .5s;  tempo de espera ao passar o mouse */
+}
+
+nav > a:hover { /* quando o mouse passar sobre algum link */
+    background-color: var(--cor3);
+    color: var(--cor5);
+}
+
+main {
+    /*configure a largura máxima e mínima para atender responsividade*/
+    min-width: 300px;
+    max-width: 1000px;
+    margin: auto;
+    margin-bottom: 30px;
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.418); /*sombreamento*/
+    /*arredondamento da parte inferior do Main*/
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+main h1 {
+    color: var(--cor5);
+    font-family: var(--fonte-android);
+    font-weight: normal;
+    font-size: 1.8em;
+}
+
+main h2 {
+    font-family: var(--fonte-android);
+    color: var(--cor4);
+    font-size: 1.3em;
+    font-weight: normal;
+    background-image: linear-gradient(to right, var(--cor1), transparent); /* fundo transparente començando com uma tonalidade, indo clareando e finalizando com transparente */
+    text-indent: 8px;
+}
+
+main p { /* configuração global para parágrafos dentro de Main */
+    margin: 15px 0px;    
+    text-align: justify;
+    text-indent: 30px;  /* recuo de parágrafo */
+    line-height: 1.5em;
+}
+
+main img {
+    /*largura de 100% para as figuras se adaptarem a responsividade*/
+    width: 100%;
+}
+
+main strong {
+    color: var(--cor4);
+    font-weight: bold;
+}
+
+main a { /* configuração dos links */
+    text-decoration: none;
+    font-weight: bold;
+    background-color: var(--cor1);
+    color: var(--cor5);
+    padding: 2px 6px;
+    
+}
+
+main a:hover { /* quando passar o mouse sobre algum link */
+    text-decoration: underline;
+    color: var(--cor4);
+}
+
+main img.pequena {
+   /*centralizado e largura máxima de 350px para as figuras se adaptarem a responsividade*/
+    max-width: 350px;
+    display: block;
+    margin: auto;
+}
+
+div.video { /* configurações para evitar que vídeos externos(iframe) se quebrem quando ativar a responsividade */
+    background-color: var(--cor5);
+    margin: 0px -20px 30px -20px;
+    padding: 20px;
+    padding-bottom: 59%;
+    position: relative;
+}
+
+div.video > iframe { /* configurações para evitar que vídeos externos(iframe) se quebrem quando ativar a responsividade */
+    position: absolute;
+    top: 5%;
+    left: 5%;
+    width: 90%;
+    height: 90%;
+}
+
+aside {
+    background-color: var(--cor0);
+    padding: 10px;
+    border-radius: 10px;  /* caixa com borda arredondada */
+    box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.280);
+}
+
+aside > h3 {
+    background-color: var(--cor4);
+    color: white;
+    padding: 5px;
+    margin: -10px -10px 0px -10px;
+    border-radius: 10px 10px 0px 0px; /* criar um bloco arredondado nos dois componentes do aside */
+}
+
+aside > ul {
+    list-style-type: '\2714\00A0'; /* vamos colocar um símbolo de check que tem o código 2714 e a barra invertida é para acionar o símbolo pelo seu código e também adicioar um espaço em branco pelo código 00A0*/
+    list-style-position: inside; /* as bolinhas/checks da lista vão ficar do lado de dentro do quadro */
+    columns: 2;
+}
+
+footer {
+    background-color: var(--cor5);
+    color: white;
+    text-align: center;
+    font-size: 0.8em;
+    padding: 5px;
+}
+
+footer a {
+    color: white;
+    font-weight: bolder;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+    color: var(--cor1);
+}
